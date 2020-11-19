@@ -1,5 +1,5 @@
-# Portable-Executable-Packer
-A PE packer with Huffman Compression and Xor encryption.
+# hXOR Packer
+hXOR Packer is a PE (Portable Executable) packer with Huffman Compression and Xor encryption.
 
 The Packer will contain another Portable Executable which is encrypted and compressed.  
 It will decompress and decrypt the packed PE and execute it directly from memory 
