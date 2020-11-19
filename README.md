@@ -217,34 +217,6 @@ The CLR Metadata is directly after the CLR Header. It contains a signature and v
 
 ![Section Bodies](https://cdn.discordapp.com/attachments/240938506103422976/779023860414021653/unknown.png)
 
-
-## How does the hXOR Packer Works?
-By packing, it means to pack a executable file and either compress or encrypt it, as such, it nearly
-impossible for a user to notice a difference between a Packed Executable File and the
-original/unpacked Executable File without having the knowledge of reading the Packed Executable
-file in hexadecimal form, from a hex editor.
-
-The Portable Executable Packer that I’m writing will called hXOR.exe, which “h” simply stands for the
-Huffman algorithm and the XOR stands for “XOR” encryption that being used.
-Firstly, hXOR packer will validate if the input file is a valid executable file. By doing this validation, it
-will helps hXOR Un-Packer as it will assume that the executable file that it suppose to execute from
-memory is a valid executable file
-
-Secondly, it will check for any parameter that is being entered during execution. It can either;
-1. Packs the Executable file without any compression nor encryption,
-2. Packs the Executable file with only compression,
-3. Packs the Executable file with encryption with key provided by the user,
-4. Packs the Executable file with encryption without key provided by the user,
-5. Packs the Executable file with both compression and encryption with the key provided by
-the user,
-6. Packs the Executable file with both compression and encryption without the key provided by
-the user.
-
-Lastly, the packer will pack the executable file along the Un-Packer to create an output packed
-executable file. By adding the Un-Packer application at the very beginning of the encrypted and
-compressed executable file, the Un-Packer will decompress, decrypt and finally, execute the packed
-PE, making it impossible for normal user to notice that he/she has executed a packed PE. 
-
 ## Huffman Entropy Encoding Algorithm
 The Huffman coding uses a statistical technique. By using only C functions like, memset, memmove,
 qsort, malloc and memcpy, it can reduce the amount of bits used to represent a string of characters
@@ -320,6 +292,35 @@ and the same key.
 In XOR Encryption, I can reuse the same code for encrypting and decrypting. 
 
 ![XOR Encryption](https://cdn.discordapp.com/attachments/240938506103422976/779024846007828500/unknown.png)
+
+
+
+## How does the hXOR Packer Works?
+By packing, it means to pack a executable file and either compress or encrypt it, as such, it nearly
+impossible for a user to notice a difference between a Packed Executable File and the
+original/unpacked Executable File without having the knowledge of reading the Packed Executable
+file in hexadecimal form, from a hex editor.
+
+The Portable Executable Packer that I’m writing will called hXOR.exe, which “h” simply stands for the
+Huffman algorithm and the XOR stands for “XOR” encryption that being used.
+Firstly, hXOR packer will validate if the input file is a valid executable file. By doing this validation, it
+will helps hXOR Un-Packer as it will assume that the executable file that it suppose to execute from
+memory is a valid executable file
+
+Secondly, it will check for any parameter that is being entered during execution. It can either;
+1. Packs the Executable file without any compression nor encryption,
+2. Packs the Executable file with only compression,
+3. Packs the Executable file with encryption with key provided by the user,
+4. Packs the Executable file with encryption without key provided by the user,
+5. Packs the Executable file with both compression and encryption with the key provided by
+the user,
+6. Packs the Executable file with both compression and encryption without the key provided by
+the user.
+
+Lastly, the packer will pack the executable file along the Un-Packer to create an output packed
+executable file. By adding the Un-Packer application at the very beginning of the encrypted and
+compressed executable file, the Un-Packer will decompress, decrypt and finally, execute the packed
+PE, making it impossible for normal user to notice that he/she has executed a packed PE. 
 
 ### Functional Requirement
 - Packs input file
