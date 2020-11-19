@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="include\encryption.h" open="1" top="0" tabpos="2">
+		<Cursor position="109" topLine="0" />
+	</File>
+	<File name="include\huffman.h" open="0" top="0" tabpos="4">
+		<Cursor position="1084" topLine="0" />
+	</File>
+	<File name="include\packingInfo.h" open="0" top="0" tabpos="2">
+		<Cursor position="1296" topLine="8" />
+	</File>
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1543" topLine="11" />
+	</File>
+	<File name="src\encryption.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="500" topLine="0" />
+	</File>
+	<File name="src\huffman.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="20" topLine="0" />
+	</File>
+	<File name="src\packingInfo.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="5367" topLine="132" />
+	</File>
+</CodeBlocks_layout_file>

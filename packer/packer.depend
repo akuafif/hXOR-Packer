@@ -1,0 +1,142 @@
+# depslib dependency file v1.0
+1335521390 source:c:\users\linuxlovers\desktop\programs\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1335521390 c:\users\linuxlovers\desktop\programs\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<vector>
+
+1335520434 source:c:\users\linuxlovers\desktop\programs\packer\main.cpp
+	"packingInfo.h"
+
+1335924599 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\programs\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1335924627 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\programs\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<vector>
+
+1335924616 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\programs\packer\main.cpp
+	"packingInfo.h"
+
+1336885494 source:c:\users\sony\desktop\testingkkk\packer\main.cpp
+	"packingInfo.h"
+
+1336838551 c:\users\sony\desktop\testingkkk\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+
+1336837268 source:c:\users\sony\desktop\testingkkk\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1337240079 source:c:\users\sony\desktop\packer\part 3\packer\main.cpp
+	"packingInfo.h"
+
+1337067275 c:\users\sony\desktop\packer\part 3\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<huffman.h>
+
+1337240534 c:\users\sony\desktop\packer\part 3\packer\include\huffman.h
+	<stdio.h>
+	<windows.h>
+
+1337240336 source:c:\users\sony\desktop\packer\part 3\packer\src\huffman.cpp
+	"huffman.h"
+
+1337240336 source:c:\users\sony\desktop\packer\part 3\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1337240336 source:c:\users\sony\desktop\packer\part 4 - encryption\packer\src\huffman.cpp
+	"huffman.h"
+
+1337240534 c:\users\sony\desktop\packer\part 4 - encryption\packer\include\huffman.h
+	<stdio.h>
+	<windows.h>
+
+1337240079 source:c:\users\sony\desktop\packer\part 4 - encryption\packer\main.cpp
+	"packingInfo.h"
+
+1339042568 c:\users\sony\desktop\packer\part 4 - encryption\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<encryption.h>
+	<huffman.h>
+
+1339041242 c:\users\sony\desktop\packer\part 4 - encryption\packer\include\compression.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1339041250 source:c:\users\sony\desktop\packer\part 4 - encryption\packer\src\compression.cpp
+	"compression.h"
+
+1339042568 source:c:\users\sony\desktop\packer\part 4 - encryption\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1339041893 c:\users\sony\desktop\packer\part 4 - encryption\packer\include\encryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1339041893 source:c:\users\sony\desktop\packer\part 4 - encryption\packer\src\encryption.cpp
+	"encryption.h"
+
+1340875091 source:c:\users\sony\desktop\packer\part 5 - arguments\packer\src\encryption.cpp
+	"encryption.h"
+
+1340874965 c:\users\sony\desktop\packer\part 5 - arguments\packer\include\encryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1337240336 source:c:\users\sony\desktop\packer\part 5 - arguments\packer\src\huffman.cpp
+	"huffman.h"
+
+1337240534 c:\users\sony\desktop\packer\part 5 - arguments\packer\include\huffman.h
+	<stdio.h>
+	<windows.h>
+
+1340938442 source:c:\users\sony\desktop\packer\part 5 - arguments\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1340874965 c:\users\sony\desktop\packer\part 5 - arguments\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<encryption.h>
+	<huffman.h>
+	<string>
+
+1340936471 source:c:\users\sony\desktop\packer\part 5 - arguments\packer\main.cpp
+	"packingInfo.h"
+
+1340875091 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\src\encryption.cpp
+	"encryption.h"
+
+1340874965 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\include\encryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1337240336 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\src\huffman.cpp
+	"huffman.h"
+
+1337240534 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\include\huffman.h
+	<stdio.h>
+	<windows.h>
+
+1340938442 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\src\packinginfo.cpp
+	"packingInfo.h"
+
+1340874965 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\include\packinginfo.h
+	<windows.h>
+	<stdio.h>
+	<encryption.h>
+	<huffman.h>
+	<string>
+
+1341803664 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\packer\main.cpp
+	"packingInfo.h"
+

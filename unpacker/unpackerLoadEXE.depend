@@ -1,0 +1,120 @@
+# depslib dependency file v1.0
+1336820786 source:c:\users\linuxlovers\desktop\programs\unpackerloadexe\main.cpp
+	<windows.h>
+	<stdio.h>
+
+1336886207 source:c:\users\sony\desktop\testingkkk\unpackerloadexe\main.cpp
+	<windows.h>
+	<stdio.h>
+
+1337069853 source:c:\users\sony\desktop\packer\part 3\unpackerloadexe\main.cpp
+	"HuffmanD.h"
+
+1337067786 source:c:\users\sony\desktop\packer\part 3\unpackerloadexe\src\huffmand.cpp
+	"HuffmanD.h"
+
+1337240811 c:\users\sony\desktop\packer\part 3\unpackerloadexe\include\huffmand.h
+	<stdio.h>
+	<windows.h>
+
+1337240811 source:c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\src\huffmand.cpp
+	"HuffmanD.h"
+
+1337240811 c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\include\huffmand.h
+	<stdio.h>
+	<windows.h>
+
+1339041702 source:c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\main.cpp
+	"loadEXE.h"
+
+1339042588 c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\include\loadexe.h
+	"HuffmanD.h"
+	"decryption.h"
+	<stdio.h>
+	<windows.h>
+
+1339042884 source:c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\src\decryption.cpp
+	"decryption.h"
+
+1339042140 c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\include\decryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1339042807 source:c:\users\sony\desktop\packer\part 4 - encryption\unpackerloadexe\src\loadexe.cpp
+	"loadEXE.h"
+
+1337240811 source:c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\src\huffmand.cpp
+	"HuffmanD.h"
+
+1337240811 c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\include\huffmand.h
+	<stdio.h>
+	<windows.h>
+
+1340875195 source:c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\src\decryption.cpp
+	"decryption.h"
+
+1340875195 c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\include\decryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1341461482 source:c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\main.cpp
+	"loadEXE.h"
+
+1340940337 c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\include\loadexe.h
+	"HuffmanD.h"
+	"decryption.h"
+	"antiDefense.h"
+	<stdio.h>
+	<windows.h>
+
+1341461180 source:c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\src\loadexe.cpp
+	"loadEXE.h"
+
+1340941451 c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\include\antidefense.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<TlHelp32.h>
+
+1340946818 source:c:\users\sony\desktop\packer\part 5 - arguments\unpackerloadexe\src\antidefense.cpp
+	"antiDefense.h"
+
+1337240811 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\src\huffmand.cpp
+	"HuffmanD.h"
+
+1337240811 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\include\huffmand.h
+	<stdio.h>
+	<windows.h>
+
+1340946818 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\src\antidefense.cpp
+	"antiDefense.h"
+
+1340941451 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\include\antidefense.h
+	<stdio.h>
+	<windows.h>
+	<string>
+	<TlHelp32.h>
+
+1340875195 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\src\decryption.cpp
+	"decryption.h"
+
+1340875195 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\include\decryption.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+
+1341461534 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\src\loadexe.cpp
+	"loadEXE.h"
+
+1340940337 h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\include\loadexe.h
+	"HuffmanD.h"
+	"decryption.h"
+	"antiDefense.h"
+	<stdio.h>
+	<windows.h>
+
+1341461482 source:h:\libraries\my documents\dropbox\ngee ann poly\semester 5\packer\packer\part 5 - arguments\unpackerloadexe\main.cpp
+	"loadEXE.h"
+
