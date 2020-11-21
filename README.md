@@ -33,7 +33,7 @@ Examples:
 - packer.exe C:\in.exe C:\folder\out.exe   
 - packer.exe C:\in.exe C:\folder\out.exe -ce 56213 
 
-# Tools and Skills required
+# Tools used
 ## Code::Blocks
 Code::Blocks is a free and open source cross-platform integrated development environment. It
 provides a source code editor, build automation tools, debugger and more. Code::Blocks uses lesser
@@ -44,7 +44,8 @@ compiler.
 MinGW (28), which stands for Minimalist GNU for Windows, is a port of the GCC, GNU
 Compiler Collection. This is my primary compiler when I am compiling any C/C++
 applications.
-## Knowledge and skills
+
+# Knowledge and skills required
 - Portable Executable file format
 - Huffman entropy encoding algorithm
 - Dynamic Process Forking Of Portable Executable
@@ -74,9 +75,107 @@ by the antivirus.
 The purpose of this project is to successfully infect a person operating system with the PE Packer.
 Inside the PE Packer, it will contain a encrypted source code of a virus and it will unpack, decrypt and
 compile itself during runtime. 
+## How does the hXOR Packer Works?
+By packing, it means to pack a executable file and either compress or encrypt it, as such, it nearly
+impossible for a user to notice a difference between a Packed Executable File and the
+original/unpacked Executable File without having the knowledge of reading the Packed Executable
+file in hexadecimal form, from a hex editor.
 
-There are two types of self-extracting archive, binder and packer.
+The Portable Executable Packer that I’m writing will called hXOR.exe, which “h” simply stands for the
+Huffman algorithm and the XOR stands for “XOR” encryption that being used.
+Firstly, hXOR packer will validate if the input file is a valid executable file. By doing this validation, it
+will helps hXOR Un-Packer as it will assume that the executable file that it suppose to execute from
+memory is a valid executable file
 
+Secondly, it will check for any parameter that is being entered during execution. It can either;
+1. Packs the Executable file without any compression nor encryption,
+2. Packs the Executable file with only compression,
+3. Packs the Executable file with encryption with key provided by the user,
+4. Packs the Executable file with encryption without key provided by the user,
+5. Packs the Executable file with both compression and encryption with the key provided by
+the user,
+6. Packs the Executable file with both compression and encryption without the key provided by
+the user.
+
+Lastly, the packer will pack the executable file along the Un-Packer to create an output packed
+executable file. By adding the Un-Packer application at the very beginning of the encrypted and
+compressed executable file, the Un-Packer will decompress, decrypt and finally, execute the packed
+PE, making it impossible for normal user to notice that he/she has executed a packed PE. 
+
+### Functional Requirement
+- Packs input file
+- - User enter the input file directory
+- - The software will inform the user the output with only the output file directory.
+- Packs with Compression
+- - User enters input file directory with ‘-c’ as the parameter upon execution.
+- - The software compresses the input file.
+- - The software will inform the user the output with the output file size and output file
+directory on the command line.
+- Packs with Encryption without key provided
+- - User enters the input file directory with ‘-e’ as the parameter upon execution.
+- - The software will generate the key.
+- - The software encrypts the input file with the key generated.
+- - The software will inform the user the output with only the output file directory.
+- Packs with Encryption with key provided
+- - User enters the input file directory with ‘-e x’ as parameter where ‘x’ is the key and is in
+integer upon execution.
+- - The software will encrypt the input file with the provided key.
+- - The software will inform the user the output with only the output file directory.
+- Packs with Compression and Encryption without the key provided
+- - User enters the input file directory with ‘-ce’ as the parameter upon execution.
+- - The software will generate the key.
+- - The software will encrypt the input file with the key generated.
+- - The software will then compresses the encrypted input file
+- - The software will inform the user the output with the output file size and output file
+directory on the command line.
+- Packs with Compression and Encryption with the key provided
+- - User enters the input file directory with ‘-ce x’ as the parameter where ‘x’ is the key and
+is in integer upon execution.
+- - The software will encrypt the input file with the provided key.
+- - The software will then compresses the encrypted input file
+- - The software will inform the user the output with the output file size and output file
+directory on the command line.
+### Non-Functional Requirement
+- Able to validate input file
+- - The software must have the ability to check the input file to make sure it is an
+executable file.
+- Able to accepts and validate parameters
+- - The software must have the ability to accept any parameter and validate them.
+- Command-line Interface
+- - The software must have a command-line interface.
+
+## How does the hXOR Un-Packer Works?
+The Un-Packer is the only program that will not require a single input from the user during runtime.
+It is designed to have no graphical user interface.
+
+Firstly, the Un-Packer will look for the offset to the Packed Executable file in its own Image DOS
+Header. It will then create a pointer pointing to the starting position of the Packed Executable File.
+Secondly, the Un-Packer will begin to understand how the Packed Executable file was being packed
+by the Packer in order to unpack it.
+
+Lastly, without saving the Unpacked Executable File into the system hard disk, the Un-Packer will
+begin to create a child process and execute the Unpacked Executable File from the memory. It is the
+nearly impossible for a normal user to notice that the Executable File he/she just executed is actually
+a Packed Executable File and all this 3 steps have just happened quickly during execution.
+### Functional Requirement
+None
+### Non-Functional Requirement
+- Able to locate the Packed File
+- - The program must be able to locate the Packed File inside of itself.
+- Able to understand the Packed File
+-  The program must be able to understand how the file was packed by the Packer, hXOR.
+- Invisible to the user
+- - The program must have no graphical interface and it will not open a command prompt
+window too.
+- Output visible in command line
+- - The program will be able to show output if user execute it from the command line
+instead of double clicking in the explorer.exe.
+- Execute from memory
+- - The program will have to execute the unpacked Executable File from the memory.
+- Able to scan running processes and detect environment
+- - The program will be able to detect if there is any defensive software that is interfering
+with the execution of itself, such as runtime scanning and isolated environment such as
+Sandboxie.
 
 # Binders vs Packers
 ## Binders
@@ -295,116 +394,6 @@ In XOR Encryption, I can reuse the same code for encrypting and decrypting.
 
 
 
-## How does the hXOR Packer Works?
-By packing, it means to pack a executable file and either compress or encrypt it, as such, it nearly
-impossible for a user to notice a difference between a Packed Executable File and the
-original/unpacked Executable File without having the knowledge of reading the Packed Executable
-file in hexadecimal form, from a hex editor.
 
-The Portable Executable Packer that I’m writing will called hXOR.exe, which “h” simply stands for the
-Huffman algorithm and the XOR stands for “XOR” encryption that being used.
-Firstly, hXOR packer will validate if the input file is a valid executable file. By doing this validation, it
-will helps hXOR Un-Packer as it will assume that the executable file that it suppose to execute from
-memory is a valid executable file
-
-Secondly, it will check for any parameter that is being entered during execution. It can either;
-1. Packs the Executable file without any compression nor encryption,
-2. Packs the Executable file with only compression,
-3. Packs the Executable file with encryption with key provided by the user,
-4. Packs the Executable file with encryption without key provided by the user,
-5. Packs the Executable file with both compression and encryption with the key provided by
-the user,
-6. Packs the Executable file with both compression and encryption without the key provided by
-the user.
-
-Lastly, the packer will pack the executable file along the Un-Packer to create an output packed
-executable file. By adding the Un-Packer application at the very beginning of the encrypted and
-compressed executable file, the Un-Packer will decompress, decrypt and finally, execute the packed
-PE, making it impossible for normal user to notice that he/she has executed a packed PE. 
-
-### Functional Requirement
-- Packs input file
-- - User enter the input file directory
-- - The software will inform the user the output with only the output file directory.
-- Packs with Compression
-- - User enters input file directory with ‘-c’ as the parameter upon execution.
-- - The software compresses the input file.
-- - The software will inform the user the output with the output file size and output file
-directory on the command line.
-- Packs with Encryption without key provided
-- - User enters the input file directory with ‘-e’ as the parameter upon execution.
-- - The software will generate the key.
-- - The software encrypts the input file with the key generated.
-- - The software will inform the user the output with only the output file directory.
-- Packs with Encryption with key provided
-- - User enters the input file directory with ‘-e x’ as parameter where ‘x’ is the key and is in
-integer upon execution.
-- - The software will encrypt the input file with the provided key.
-- - The software will inform the user the output with only the output file directory.
-- Packs with Compression and Encryption without the key provided
-- - User enters the input file directory with ‘-ce’ as the parameter upon execution.
-- - The software will generate the key.
-- - The software will encrypt the input file with the key generated.
-- - The software will then compresses the encrypted input file
-- - The software will inform the user the output with the output file size and output file
-directory on the command line.
-- Packs with Compression and Encryption with the key provided
-- - User enters the input file directory with ‘-ce x’ as the parameter where ‘x’ is the key and
-is in integer upon execution.
-- - The software will encrypt the input file with the provided key.
-- - The software will then compresses the encrypted input file
-- - The software will inform the user the output with the output file size and output file
-directory on the command line.
-### Non-Functional Requirement
-- Able to validate input file
-- - The software must have the ability to check the input file to make sure it is an
-executable file.
-- Able to accepts and validate parameters
-- - The software must have the ability to accept any parameter and validate them.
-- Command-line Interface
-- - The software must have a command-line interface.
-
-## How does the hXOR Un-Packer Works?
-The Un-Packer is the only program that will not require a single input from the user during runtime.
-It is designed to have no graphical user interface.
-
-Firstly, the Un-Packer will look for the offset to the Packed Executable file in its own Image DOS
-Header. It will then create a pointer pointing to the starting position of the Packed Executable File.
-Secondly, the Un-Packer will begin to understand how the Packed Executable file was being packed
-by the Packer in order to unpack it.
-
-Lastly, without saving the Unpacked Executable File into the system hard disk, the Un-Packer will
-begin to create a child process and execute the Unpacked Executable File from the memory. It is the
-nearly impossible for a normal user to notice that the Executable File he/she just executed is actually
-a Packed Executable File and all this 3 steps have just happened quickly during execution.
-### Functional Requirement
-None
-### Non-Functional Requirement
-- Able to locate the Packed File
-- - The program must be able to locate the Packed File inside of itself.
-- Able to understand the Packed File
--  The program must be able to understand how the file was packed by the Packer, hXOR.
-- Invisible to the user
-- - The program must have no graphical interface and it will not open a command prompt
-window too.
-- Output visible in command line
-- - The program will be able to show output if user execute it from the command line
-instead of double clicking in the explorer.exe.
-- Execute from memory
-- - The program will have to execute the unpacked Executable File from the memory.
-- Able to scan running processes and detect environment
-- - The program will be able to detect if there is any defensive software that is interfering
-with the execution of itself, such as runtime scanning and isolated environment such as
-Sandboxie.
-
-## Un-Packer
-Since I have already tested out executing the Packed Executable file without any parameter, I will
-skip the test and begin focusing with the parameter. By adding the parameter ‘-ls’ to the Packed
-Executable file, it will shows more information during runtime. This is important for on-screen
-debugging.
-
-The Un-Packer understands how the Packed Executable file is being encrypted. The key isn’t located
-inside the Packed Executable file header. The Un-Packer needs to do some minor calculation with
-the file size to get the key. 
 
 
